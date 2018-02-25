@@ -1,4 +1,4 @@
-# OpenApi::SchemaValidator
+# OpenApi::SchemaValidator [![Build Status](https://travis-ci.org/ketiko/open_api-schema_validator.svg?branch=master)](https://travis-ci.org/ketiko/open_api-schema_validator)
 
 JSON Schema Validator for OpenAPI
 
