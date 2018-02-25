@@ -1,4 +1,6 @@
-require "open_api/schema_validator/version"
+# frozen_string_literal: true
+
+require 'open_api/schema_validator/version'
 require 'json-schema'
 
 module OpenApi

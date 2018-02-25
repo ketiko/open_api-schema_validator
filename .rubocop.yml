@@ -1,0 +1,12 @@
+require: rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - '**/bin/*'
+    - '*.gemspec'
+  DisplayCopNames: true
+
+
+Style/Documentation:
+  Enabled: false
