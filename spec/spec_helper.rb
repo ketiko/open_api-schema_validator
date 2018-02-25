@@ -12,6 +12,7 @@ if ENV['COVERAGE']
       system("lois simplecov -c travis -g $GITHUB_CREDENTIALS -m #{min} -a #{actual}")
     end
     SimpleCov.result.format!
+  end
 end
 require 'open_api/schema_validator'
 
