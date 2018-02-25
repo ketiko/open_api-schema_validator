@@ -108,7 +108,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  lois (~> 0.1.4)
+  lois (~> 0.1.5)
   open_api-schema_validator!
   rake
   reek
