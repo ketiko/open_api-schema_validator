@@ -5,8 +5,11 @@ AllCops:
   Exclude:
     - '**/bin/*'
     - '*.gemspec'
+    - 'vendor/bundle/**/*'
   DisplayCopNames: true
-
 
 Style/Documentation:
   Enabled: false
+
+Metrics/LineLength:
+  Max: 100
