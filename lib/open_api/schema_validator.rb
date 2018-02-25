@@ -3,11 +3,11 @@ require 'json-schema'
 
 module OpenApi
   module SchemaValidator
-    def self.validate_swagger!(json)
-      validate!(swagger, json)
+    def self.validate!(json)
+      validate_schema!(swagger, json)
     end
 
-    def self.validate!(schema, json, opts = {})
+    def self.validate_schema!(schema, json, opts = {})
       JSON::Validator.add_schema(draft_four_schema)
       JSON::Validator.add_schema(swagger_schema)
       JSON::Validator.validate!(schema, json, opts)
