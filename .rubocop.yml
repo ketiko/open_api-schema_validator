@@ -5,6 +5,7 @@ AllCops:
   Exclude:
     - '**/bin/*'
     - '*.gemspec'
+    - 'vendor/bundle/**/*'
   DisplayCopNames: true
 
 
