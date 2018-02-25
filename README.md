@@ -2,6 +2,9 @@
 
 JSON Schema Validator for OpenAPI
 
+Currently supports OpenApi v2 schema. See [https://github.com/OAI/OpenAPI-Specification/issues/1301](https://github.com/OAI/OpenAPI-Specification/issues/1301)
+for v3 release.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -20,8 +23,18 @@ Or install it yourself as:
 
 ## Usage
 
+Validate your schema against the OpenApi schema.
 ```ruby
-OpenApi::SchemaValidator.validate_swagger!(json)
+OpenApi::SchemaValidator.validate!(json)
+```
+
+Validate a json response against part of your schema
+```ruby
+OpenApi::SchemaValidator.validate_schema!(
+  my_schema_json,
+  JSON.parse(response.body),
+  fragment: "#/definitions/User"
+)
 ```
 
 ## Development
