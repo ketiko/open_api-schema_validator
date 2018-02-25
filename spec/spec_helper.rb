@@ -1,4 +1,9 @@
 require "bundler/setup"
+
+if ENV['COVERAGE']
+  require 'simplecov'
+  SimpleCov.start
+end
 require "open_api/schema_validator"
 
 RSpec.configure do |config|
