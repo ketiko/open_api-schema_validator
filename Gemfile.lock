@@ -41,7 +41,7 @@ GEM
     json (2.1.0)
     json-schema (2.8.0)
       addressable (>= 2.4)
-    lois (0.1.3)
+    lois (0.1.4)
       activesupport
       brakeman
       bundler-audit
@@ -108,7 +108,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  lois
+  lois (~> 0.1.4)
   open_api-schema_validator!
   rake
   reek
