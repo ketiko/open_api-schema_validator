@@ -20,7 +20,7 @@ module OpenApi
     end
 
     def self.swagger_file
-      File.expand_path('../json_schemas/swagger_schema.json', __FILE__)
+      File.expand_path('json_schemas/swagger_schema.json', __dir__)
     end
 
     def self.swagger_schema
@@ -35,7 +35,7 @@ module OpenApi
     end
 
     def self.draft_four_file
-      File.expand_path('../json_schemas/json_schema_v4.json', __FILE__)
+      File.expand_path('json_schemas/json_schema_v4.json', __dir__)
     end
 
     def self.draft_four_schema
