@@ -17,5 +17,12 @@ RSpec.describe OpenApi::SchemaValidator do
 
       it { expect { validate! }.to raise_error(JSON::Schema::ValidationError) }
     end
+
+    context 'when spec is v3' do
+      let(:parsed_string) { YAML.safe_load(input) }
+      let(:input) { File.read('./spec/fixtures/petstore_v3.yml') }
+
+      it { expect { validate! }.to raise_error(JSON::Schema::ValidationError) }
+    end
   end
 end
