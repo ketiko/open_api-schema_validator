@@ -1,4 +1,4 @@
-# OpenApi::SchemaValidator [![Build Status](https://travis-ci.org/ketiko/open_api-schema_validator.svg?branch=master)](https://travis-ci.org/ketiko/open_api-schema_validator)
+# OpenApi::SchemaValidator [![CircleCI](https://circleci.com/gh/ketiko/open_api-schema_validator.svg?style=svg)](https://circleci.com/gh/ketiko/open_api-schema_validator)
 
 JSON Schema Validator for OpenAPI
 
