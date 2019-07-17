@@ -1,0 +1,60 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+       # specify the version you desire here
+       - image: ruby:2.6.3
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v2-dependencies-{{ checksum "Gemfile.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v2-dependencies-
+
+      - run:
+          name: Bundle Install
+          command: bundle install --deployment --jobs 4 --retry 3
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v2-dependencies-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Bundler-Audit
+          command: bin/lois bundler-audit -g $GITHUB_CREDENTIALS
+
+      - run:
+          name: Rubocop
+          command: bin/lois rubocop -g $GITHUB_CREDENTIALS
+
+      - run:
+          name: Reek
+          command: bin/lois reek -g $GITHUB_CREDENTIALS
+
+      - run:
+          name: RSpec
+          command: |
+            mkdir results
+            bin/rspec --order random --profile --format documentation -- spec
+
+      # collect reports
+      - store_test_results:
+          path: results
+      - store_artifacts:
+          path: results
+      - store_artifacts:
+          path: lois
+      - store_artifacts:
+          path: coverage
+
