@@ -46,7 +46,7 @@ jobs:
           name: RSpec
           command: |
             mkdir results
-            bin/rspec --order random --profile --format documentation --format RspecJunitFormatter --out results/rspec.xml -- spec
+            bin/rspec --order random --profile --format documentation -- spec
 
       # collect reports
       - store_test_results:
