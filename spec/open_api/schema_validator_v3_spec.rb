@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'byebug'
 RSpec.describe OpenApi::SchemaValidator do
   describe '.validate! V3' do
     subject(:validate!) { described_class.validate!(parsed_string, 3) }
