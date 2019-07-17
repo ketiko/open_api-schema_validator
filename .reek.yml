@@ -1,0 +1,11 @@
+### Generic smell configuration
+detectors:
+  IrresponsibleModule:
+    enabled: false
+
+### Excluding directories
+
+# Directories and files below will not be scanned at all
+
+exclude_paths:
+  - vendor/bundle
